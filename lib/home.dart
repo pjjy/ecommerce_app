@@ -182,13 +182,14 @@ class _Home extends State<HomeT> {
                           autoplay: true,
                           animationCurve: Curves.easeInOut,
                           animationDuration: Duration(milliseconds: 1000),
-                          dotSize: 7.0,
-                          dotIncreasedColor: Color(0xFFFF335C),
+                          dotSize: 10.0,
+                          dotIncreasedColor: Colors.black,
+                          dotColor: Colors.grey,
                           dotBgColor: Colors.transparent,
-                          dotPosition: DotPosition.bottomCenter,
+                          dotPosition: DotPosition.bottomLeft,
                           dotVerticalPadding: 10.0,
                           showIndicator: true,
-                          indicatorBgPadding: 7.0,
+                          indicatorBgPadding: 10.0,
                           images: [
                             NetworkImage('http://172.16.46.130/olstore_serv/assets/images/71QTkaXtxjL._SL1500_.jpg'),
                             NetworkImage('http://172.16.46.130/olstore_serv/assets/images/20297695.png'),
@@ -205,13 +206,13 @@ class _Home extends State<HomeT> {
                       child: CupertinoButton(
                         child: Text('View Categories',style: TextStyle(color: Colors.black ,fontSize: 20.0, ),),
                         onPressed:(){
-                          Navigator.of(context, rootNavigator: true).push(
-                            new CupertinoPageRoute(
-                              builder: (context){
-                                return new ItemDetails();
-                              },
-                            ),
-                          );
+//                          Navigator.of(context, rootNavigator: true).push(
+//                            new CupertinoPageRoute(
+//                              builder: (context){
+//                                return new ItemDetails();
+//                              },
+//                            ),
+//                          );
                         },
                       ),
                     ),
@@ -249,19 +250,18 @@ class _Home extends State<HomeT> {
                                   new Expanded(
                                     child: new Container(
                                       margin: EdgeInsets.only(bottom: 40),
-                                      child: Image.network(userData[index]["item_photo"],),
+                                      child: Image.network(userData[index]["item_photo1"],),
                                     ),
                                   ),
                                 ],
                               ),
                               elevation: 0,
-                              margin: EdgeInsets.all(10),
+                              margin: EdgeInsets.all(5),
                             ),
-//
                           );
 //                       ),
 //                      );
-                        }),
+                      }),
 
                   ],
                 ),
