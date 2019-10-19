@@ -16,13 +16,34 @@ class ItemDetails extends StatelessWidget {
         middle: Text(userData[index]["item_name"]),
       ),
       child: Container(
-//        child: ListView(
-//            physics: BouncingScrollPhysics(),
-//            children: <Widget>[
-//              Image.network(userData[index]["item_photo"],),
-////              Text(userData[index]["item_photo"]),
-//            ]
-//        ),
+        child: ListView(
+            physics: BouncingScrollPhysics(),
+            children: <Widget>[
+            Card(
+              elevation: 0,
+              margin: EdgeInsets.all(10),
+              child:Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+
+
+
+                        Image.network(userData[index]["item_photo"],),
+                    ListTile(
+
+                      title: Text("P${userData[index]["item_price"]}",style: TextStyle(fontWeight: FontWeight.bold),),
+                      subtitle: Text("${userData[index]["item_name"]}",style: TextStyle(fontWeight: FontWeight.bold),),
+                    ),
+
+
+                  ],
+              ),
+
+            ),
+
+//              Text(userData[index]["item_photo"]),
+            ]
+        ),
       ),
     );
   }
