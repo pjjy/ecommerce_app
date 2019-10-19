@@ -56,15 +56,15 @@ class ItemDetails extends StatelessWidget {
                     ),
                     ListTile(
                       title: Text("P${userData[index]["item_price"]}",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,),),
-                      subtitle: Text("${userData[index]["item_name"]}",style: TextStyle( fontSize: 18),),
+                      subtitle: Text("${userData[index]["item_name"]}",style: TextStyle(fontSize: 18),),
                       leading: Icon(Icons.favorite_border, size: 30),
                     ),
                     ListTile(
-                      title: Text("Item Description:",style: TextStyle( fontSize: 16,),),
+                      title: Text("Item Description:",style: TextStyle(fontSize: 16,),),
                       subtitle: Text("Font weight has multiple values that can be supplied using the FontWeight consts. In addition to bold and normal you can supply actual weights by",style: TextStyle( fontSize: 18),),
                     ),
                     ListTile(
-                      subtitle: Text("Size: Small, Color: Blue" ,style: TextStyle( fontSize: 17),),
+                      subtitle: Text("Size: Small, Color: Blue" ,style: TextStyle(fontSize: 17),),
                     ),
                   ],
                 ),
