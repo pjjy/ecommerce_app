@@ -2,20 +2,29 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
-
-class ItemDetails extends StatelessWidget {
+class ItemDetails extends StatefulWidget {
   final List userData;
   final int index;
-// In the constructor, require a Todo.
-// ItemDetails({Key key, @required this.todo}) : super(key: key);
-  ItemDetails({this.userData,this.index});
+
+
+  ItemDetails({Key key, @required this.userData,this.index}) : super(key: key);
+
+  @override
+  _ItemDetails createState() => _ItemDetails();
+}
+
+
+class _ItemDetails extends State<ItemDetails> {
+//  final List userData;
+//  final int index;
+//
+//  _ItemDetails({this.userData,this.index});
   @override
   Widget build(BuildContext context) {
-//    print(userData[index].toString());
     return CupertinoPageScaffold(
+
       navigationBar: CupertinoNavigationBar(
-//        middle: Text("Item Details"),
-        middle: Text(userData[index]["item_name"]),
+        middle: Text(widget.userData[widget.index]["item_name"]),
       ),
       child: Container(
         child: ListView(
@@ -45,9 +54,9 @@ class ItemDetails extends StatelessWidget {
                           showIndicator: true,
                           indicatorBgPadding: 0.0,
                           images:[
-                            NetworkImage(userData[index]["item_photo1"]),
-                            NetworkImage(userData[index]["item_photo2"]),
-                            NetworkImage(userData[index]["item_photo3"]),
+                            NetworkImage(widget.userData[widget.index]["item_photo1"]),
+                            NetworkImage(widget.userData[widget.index]["item_photo2"]),
+                            NetworkImage(widget.userData[widget.index]["item_photo3"]),
                           ],
                         )
                     ),
@@ -55,20 +64,20 @@ class ItemDetails extends StatelessWidget {
                       color: Colors.transparent,
                     ),
                     ListTile(
-                      title: Text("P${userData[index]["item_price"]}",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,),),
-                      subtitle: Text("${userData[index]["item_name"]}",style: TextStyle(fontSize: 18),),
+                      title: Text("₱${widget.userData[widget.index]["item_price"]}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.deepOrange, fontSize: 23,),),
+                      subtitle: Text("${widget.userData[widget.index]["item_name"]}",style: TextStyle(fontSize: 21,color: Colors.black87),),
                       leading: Icon(Icons.favorite_border, size: 30),
                     ),
                     ListTile(
-                      title: Text("Item Description:",style: TextStyle(fontSize: 16,),),
-                      subtitle: Text("Font weight has multiple values that can be supplied using the FontWeight consts. In addition to bold and normal you can supply actual weights by",style: TextStyle( fontSize: 18),),
+                      title: Text("Item Description:",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                      subtitle: Text("Font weight has multiple values that can be supplied using the FontWeight consts. In addition to bold and normal you can supply actual weights by",style: TextStyle(color: Colors.black87, fontSize: 18),),
                     ),
                     ListTile(
-                      subtitle: Text("Size: Small, Color: Blue" ,style: TextStyle(fontSize: 17),),
+                      title: Text("Item Specification:",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                      subtitle: Text("Size: Small, Color: Blue" ,style: TextStyle(color: Colors.black87,fontSize: 17),),
                     ),
                   ],
                 ),
-
               ),
               Card(
                 elevation: 0,
@@ -76,21 +85,17 @@ class ItemDetails extends StatelessWidget {
                 child:Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-
+                   RaisedButton(
+                      onPressed: () {},
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      child: Text('Fixed Button'),
+                    ),
                   ],
                 ),
               ),
-
-//              Text(userData[index]["item_photo"]),
             ]
         ),
-//        child: ListView(
-//            physics: BouncingScrollPhysics(),
-//            children: <Widget>[
-//              Image.network(userData[index]["item_photo"],),
-////              Text(userData[index]["item_photo"]),
-//            ]
-//        ),
       ),
     );
   }

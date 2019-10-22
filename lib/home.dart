@@ -7,69 +7,7 @@ import 'itemDetails.dart';
 import 'dart:async';
 import 'dart:convert';
 
-
-//final List<String> imgList = [
-//  'http://172.16.46.130/olstore_serv/assets/images/71QTkaXtxjL._SL1500_.jpg',
-//  'http://172.16.46.130/olstore_serv/assets/images/9532a332c6db4f7dbc540142_original_.jpg',
-//  'http://172.16.46.130/olstore_serv/assets/images/20297695.png',
-//  'http://172.16.46.130/olstore_serv/assets/images/a172190b7657d71c372b39d9ad26c74c933cba35.jpg',
-//  'http://172.16.46.130/olstore_serv/assets/images/download (1).jpg',
-//  'http://172.16.46.130/olstore_serv/assets/images/download.jpg'
-//];
-
-
-
-//final Widget placeholder = Container(color: Colors.grey);
-//
-//final List child = map<Widget>(
-//  imgList,
-//      (index, i) {
-//    return Container(
-//      margin: EdgeInsets.all(5.0),
-//      child: ClipRRect(
-//        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-//        child: Stack(children: <Widget>[
-//          Image.network(i, fit: BoxFit.cover, width: 1000.0),
-//          Positioned(
-//            bottom: 0.0,
-//            left: 0.0,
-//            right: 0.0,
-//            child: Container(
-//              decoration: BoxDecoration(
-//                gradient: LinearGradient(
-//                  colors: [Color.fromARGB(200, 0, 0, 0), Color.fromARGB(0, 0, 0, 0)],
-//                  begin: Alignment.bottomCenter,
-//                  end: Alignment.topCenter,
-//                ),
-//              ),
-//              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-//              child: Text(
-//                'No. $index image',
-//                style: TextStyle(
-//                  color: Colors.white,
-//                  fontSize: 20.0,
-//                  fontWeight: FontWeight.bold,
-//                ),
-//              ),
-//            ),
-//          ),
-//        ]),
-//      ),
-//    );
-//  },
-//).toList();
-
-//List<T> map<T>(List list, Function handler) {
-//  List<T> result = [];
-//  for (var i = 0; i < list.length; i++) {
-//    result.add(handler(i, list[i]));
-//  }
-//
-//  return result;
-//}
-
 class HomeT extends StatefulWidget {
-//  MainFeedPage({Key key, @required this.empId}) : super(key: key);
   @override
   _Home createState() => _Home();
 }
@@ -85,7 +23,6 @@ class _Home extends State<HomeT> {
     setState(() {
       userData  = data["item"];
     });
-//    debugPrint(userData.toString());
   }
 
 
@@ -113,12 +50,6 @@ class _Home extends State<HomeT> {
               fontSize: 13.0, // insert your font size here
             ),),
           ),
-//          BottomNavigationBarItem(
-//            icon: Icon(CupertinoIcons.person),
-//            title: Text('Profile',style: TextStyle(
-//              fontSize: 13.0, // insert your font size here
-//            ),),
-//          ),
         ],
       ),
       tabBuilder: (context, index) {
@@ -181,7 +112,7 @@ class _Home extends State<HomeT> {
                           boxFit: BoxFit.contain,
                           autoplay: true,
                           animationCurve: Curves.easeInOut,
-                          animationDuration: Duration(milliseconds: 1000),
+                          animationDuration: Duration(milliseconds: 1300),
                           dotSize: 10.0,
                           dotIncreasedColor: Colors.black,
                           dotColor: Colors.grey,
@@ -244,8 +175,8 @@ class _Home extends State<HomeT> {
                                 children: <Widget>[
                                   ListTile(
                                     leading: Icon(Icons.favorite_border, size: 30),
-                                    title: Text("P${userData[index]["item_price"]}",style: TextStyle(fontWeight: FontWeight.bold),),
-                                    subtitle: Text("${userData[index]["item_name"]}",style: TextStyle(fontWeight: FontWeight.bold),),
+                                    title: Text("₱${userData[index]["item_price"]}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.deepOrange, fontSize: 23,),),
+                                    subtitle: Text("${userData[index]["item_name"]}",style: TextStyle(fontSize: 17,color: Colors.black87),),
                                   ),
                                   new Expanded(
                                     child: new Container(
