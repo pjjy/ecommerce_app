@@ -22,7 +22,6 @@ class _ItemDetails extends State<ItemDetails> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-
       navigationBar: CupertinoNavigationBar(
         middle: Text(widget.userData[widget.index]["item_name"]),
       ),
@@ -64,7 +63,7 @@ class _ItemDetails extends State<ItemDetails> {
                       color: Colors.transparent,
                     ),
                     ListTile(
-                      title: Text("₱${widget.userData[widget.index]["item_price"]}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.deepOrange, fontSize: 23,),),
+                      title: Text("₱${widget.userData[widget.index]["item_price"]}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.deepOrange, fontSize: 21,),),
                       subtitle: Text("${widget.userData[widget.index]["item_name"]}",style: TextStyle(fontSize: 21,color: Colors.black87),),
                       leading: Icon(Icons.favorite_border, size: 30),
                     ),
@@ -89,13 +88,16 @@ class _ItemDetails extends State<ItemDetails> {
                       onPressed: () {},
                       color: Colors.blue,
                       textColor: Colors.white,
-                      child: Text('Fixed Button'),
+                      child: Text('Add to Cart hehhee'),
                     ),
                   ],
+
                 ),
               ),
+
             ]
         ),
+
       ),
     );
   }
