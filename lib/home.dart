@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:carousel_slider/carousel_slider.dart';
 import 'package:http/http.dart' as http;
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -41,7 +40,7 @@ class _Home extends State<HomeT> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
-            title: Text('Products',style: TextStyle(
+            title: Text('Home',style: TextStyle(
               fontSize: 13.0, // insert your font size here
             ),),
           ),
@@ -86,26 +85,59 @@ class _Home extends State<HomeT> {
   Widget home(BuildContext context) {
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
-//          leading: Icon(CupertinoIcons.back,color: Colors.black),
           middle: Text("Home"),
           trailing: Icon(CupertinoIcons.shopping_cart),
+
         ),
         child: Column(
-            mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            Divider(
+              color: Colors.transparent,
+              height: 4.0,
+            ),
+
             Expanded(
               child: RefreshIndicator(
-
                 onRefresh: getItems,
                 child: ListView(
                   physics: BouncingScrollPhysics(),
                   children: <Widget>[
-//                  CarouselSlider(
-//                    items: child,
-//                    autoPlay: true,
-//                    enlargeCenterPage: true,
-//                    aspectRatio: 2.0,
-//                  ),
+                    CupertinoTextField(
+                      autofocus: false,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 16.0
+                      ),
+//                      decoration: BoxDecoration(
+//                        border: Border.all(
+//                          width: 1.0,
+//                          color: CupertinoColors.inactiveGray,
+//                        ),
+//                        borderRadius: BorderRadius.circular(15.0),
+//                      ),
+//                      suffix: Padding(
+//                        padding: EdgeInsets.symmetric(horizontal: 4.0),
+//                        child: CupertinoButton(
+//                          color: CupertinoColors.activeGreen,
+//                          minSize: 1.0,
+//                          child: const Icon(
+//                            CupertinoIcons.search,
+//                            size: 32.0,
+//                            color: CupertinoColors.white,
+//                          ),
+//                          padding: const EdgeInsets.all(2.0),
+//                          borderRadius: BorderRadius.circular(15.0),
+//                          onPressed: (){
+//                            print("asdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasd");
+//                          },
+//                        ),
+//                      ),
+                      placeholder: 'eg: Tide Bar',
+                    ),
+                    Divider(
+                      color: Colors.transparent,
+                      height: 5.0,
+                    ),
                     SizedBox(
                         height: 330.0,
                         width: 300.0,
@@ -133,6 +165,47 @@ class _Home extends State<HomeT> {
                     ),
                     Divider(
                       color: Colors.transparent,
+
+                    ),
+
+
+
+//                  CupertinoTextField(
+//  //        controller: _chatTextController,
+//                    textCapitalization: TextCapitalization.sentences,
+//                    placeholder: 'Text Message',
+//                    decoration: BoxDecoration(
+//                      border: Border.all(
+//                            width: 0.0,
+//                            color: CupertinoColors.inactiveGray,
+//                      ),
+//                      borderRadius: BorderRadius.circular(15.0),
+//
+//                      ),
+//                        maxLines: null,
+//                        keyboardType: TextInputType.multiline,
+//                        prefix: const Padding(padding: EdgeInsets.symmetric(horizontal: 4.0,vertical: 24.0)),
+//                        suffix: Padding(
+//                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+//                          child: CupertinoButton(
+//                            color: CupertinoColors.activeGreen,
+//                            minSize: 0.0,
+//                            child: const Icon(
+//                            CupertinoIcons.search,
+//                            size: 21.0,
+//                            color: CupertinoColors.white,
+//                       ),
+//                            padding: const EdgeInsets.all(2.0),
+//                            borderRadius: BorderRadius.circular(15.0),
+//                       ),
+//                      ),
+//                      autofocus: true,
+//                      suffixMode: OverlayVisibilityMode.editing,
+//                    ),
+
+                    Divider(
+                      color: Colors.transparent,
+                      height: 100.0,
                     ),
 
                     Center(
@@ -291,6 +364,8 @@ class _Home extends State<HomeT> {
                         ],
                       ),
                     ),
+
+
 
                     new GridView.builder(
                         shrinkWrap: true,

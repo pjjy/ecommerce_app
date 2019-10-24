@@ -24,6 +24,7 @@ class _ItemDetails extends State<ItemDetails> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(widget.userData[widget.index]["item_name"]),
+        trailing: Icon(CupertinoIcons.shopping_cart),
       ),
       child: Container(
         child: ListView(
@@ -72,32 +73,40 @@ class _ItemDetails extends State<ItemDetails> {
                       subtitle: Text("Font weight has multiple values that can be supplied using the FontWeight consts. In addition to bold and normal you can supply actual weights by",style: TextStyle(color: Colors.black87, fontSize: 18),),
                     ),
                     ListTile(
+                      title: Text("Item Description:",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                      subtitle: Text("Font weight has multiple values that can be supplied using the FontWeight consts. In addition to bold and normal you can supply actual weights by",style: TextStyle(color: Colors.black87, fontSize: 18),),
+                    ),
+                    ListTile(
+                      title: Text("Item Description:",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                      subtitle: Text("Font weight has multiple values that can be supplied using the FontWeight consts. In addition to bold and normal you can supply actual weights by",style: TextStyle(color: Colors.black87, fontSize: 18),),
+                    ),
+                    ListTile(
+                      title: Text("Item Description:",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                      subtitle: Text("Font weight has multiple values that can be supplied using the FontWeight consts. In addition to bold and normal you can supply actual weights by",style: TextStyle(color: Colors.black87, fontSize: 18),),
+                    ),
+                    ListTile(
+                      title: Text("Item Description:",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                      subtitle: Text("Font weight has multiple values that can be supplied using the FontWeight consts. In addition to bold and normal you can supply actual weights by",style: TextStyle(color: Colors.black87, fontSize: 18),),
+                    ),
+                    ListTile(
+                      title: Text("Item Description:",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                      subtitle: Text("Font weight has multiple values that can be supplied using the FontWeight consts. In addition to bold and normal you can supply actual weights by",style: TextStyle(color: Colors.black87, fontSize: 18),),
+                    ),
+                    ListTile(
                       title: Text("Item Specification:",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
                       subtitle: Text("Size: Small, Color: Blue" ,style: TextStyle(color: Colors.black87,fontSize: 17),),
                     ),
                   ],
                 ),
               ),
-              Card(
-                elevation: 0,
-                margin: EdgeInsets.all(1),
-                child:Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                   RaisedButton(
-                      onPressed: () {},
-                      color: Colors.blue,
-                      textColor: Colors.white,
-                      child: Text('Add to Cart hehhee'),
-                    ),
-                  ],
-
-                ),
-              ),
-
-            ]
+              CupertinoButton.filled(
+                child: Text('Add to Cart'),
+                onPressed: () {
+                    print('samasdsad');
+              },
+           ),
+         ]
         ),
-
       ),
     );
   }
